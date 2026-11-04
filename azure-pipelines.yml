@@ -1,0 +1,46 @@
+trigger:
+  branches:
+    include: [main]
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  imageName: demo-app
+
+stages:
+  - stage: Build
+    jobs:
+      - job: TestAndBuild
+        steps:
+          - task: UsePythonVersion@0
+            inputs:
+              versionSpec: "3.12"
+          - script: python -m unittest discover tests
+            displayName: Unit tests
+          - script: docker build -f docker/Dockerfile -t $(imageName):$(Build.BuildId) .
+            displayName: Build image
+
+  - stage: DeployNonProd
+    dependsOn: Build
+    jobs:
+      - deployment: Deploy
+        environment: non-prod
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - script: echo "kubectl apply -f k8s/ -n non-prod"
+                  displayName: Deploy to non-prod
+
+  - stage: DeployProd
+    dependsOn: DeployNonProd
+    jobs:
+      - deployment: Deploy
+        environment: prod          # configure an approval check on this environment
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - script: echo "kubectl apply -f k8s/ -n prod"
+                  displayName: Deploy to prod
