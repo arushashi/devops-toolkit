@@ -1,0 +1,108 @@
+{
+    "repo":  "devops-toolkit",
+    "title":  "DevOps Toolkit",
+    "tagline":  "CI/CD with GitHub Actions and Azure DevOps, a hardened container image and production-ready Kubernetes manifests.",
+    "groups":  [
+                   {
+                       "name":  "Overview",
+                       "items":  [
+                                     {
+                                         "path":  "README.md",
+                                         "title":  "Overview"
+                                     }
+                                 ]
+                   },
+                   {
+                       "name":  "Source files",
+                       "items":  [
+                                     {
+                                         "path":  "azure-pipelines.yml",
+                                         "title":  "azure-pipelines.yml"
+                                     }
+                                 ]
+                   },
+                   {
+                       "name":  "Source: app",
+                       "items":  [
+                                     {
+                                         "path":  "app/main.py",
+                                         "title":  "app/main.py"
+                                     }
+                                 ]
+                   },
+                   {
+                       "name":  "Source: docker",
+                       "items":  [
+                                     {
+                                         "path":  "docker/Dockerfile",
+                                         "title":  "docker/Dockerfile"
+                                     }
+                                 ]
+                   },
+                   {
+                       "name":  "Source: github",
+                       "items":  [
+                                     {
+                                         "path":  ".github/workflows/ci.yml",
+                                         "title":  ".github/workflows/ci.yml"
+                                     }
+                                 ]
+                   },
+                   {
+                       "name":  "Source: k8s",
+                       "items":  [
+                                     {
+                                         "path":  "k8s/deployment.yaml",
+                                         "title":  "k8s/deployment.yaml"
+                                     },
+                                     {
+                                         "path":  "k8s/service-hpa-pdb.yaml",
+                                         "title":  "k8s/service-hpa-pdb.yaml"
+                                     }
+                                 ]
+                   },
+                   {
+                       "name":  "Source: tests",
+                       "items":  [
+                                     {
+                                         "path":  "tests/test_app.py",
+                                         "title":  "tests/test_app.py"
+                                     }
+                                 ]
+                   }
+               ],
+    "pages":  [
+                  {
+                      "path":  "README.md",
+                      "title":  "Overview"
+                  },
+                  {
+                      "path":  "azure-pipelines.yml",
+                      "title":  "azure-pipelines.yml"
+                  },
+                  {
+                      "path":  "app/main.py",
+                      "title":  "app/main.py"
+                  },
+                  {
+                      "path":  "docker/Dockerfile",
+                      "title":  "docker/Dockerfile"
+                  },
+                  {
+                      "path":  ".github/workflows/ci.yml",
+                      "title":  ".github/workflows/ci.yml"
+                  },
+                  {
+                      "path":  "k8s/deployment.yaml",
+                      "title":  "k8s/deployment.yaml"
+                  },
+                  {
+                      "path":  "k8s/service-hpa-pdb.yaml",
+                      "title":  "k8s/service-hpa-pdb.yaml"
+                  },
+                  {
+                      "path":  "tests/test_app.py",
+                      "title":  "tests/test_app.py"
+                  }
+              ]
+}
